@@ -18,7 +18,7 @@ namespace ControleClientesProdudos.Models
         private string nomeCliente;
         private int idProduto;
         private string nomeProduto;
-        private Double valorTotal;
+        private decimal valorTotal;
 
         public int IdVenda { get => idVenda; set => idVenda = value; }
         public int QtdItens { get => qtdItens; set => qtdItens = value; }
@@ -28,7 +28,7 @@ namespace ControleClientesProdudos.Models
 
         public int IdProduto { get => idProduto; set => idProduto = value; }
         public string NomeProduto { get => nomeProduto; set => nomeProduto = value; }
-        public Double ValorTotal { get => valorTotal; set => valorTotal = value; }
+        public decimal ValorTotal { get => valorTotal; set => valorTotal = value; }
 
         /// <summary>
         /// Rotina para Inserir dados
