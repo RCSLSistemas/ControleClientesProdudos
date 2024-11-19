@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using ControleClientesProdudos.Controls;
 using ControleClientesProdudos.Models;
 using Npgsql;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
@@ -20,32 +21,102 @@ namespace ControleClientesProdudos.Views
 {
     public partial class frmVendasCadastro : Form
     {
-        Vendas c = new Vendas();
+        Vendas v = new Vendas();
+        Produtos p = new Produtos();
+        Double total = 0;
+        int totalQtd = 0;
+
         public frmVendasCadastro()
         {
             InitializeComponent();
 
         }
-        private void CarregaCampos()
+        private void AdicionaValores()
         {
-            txtNome.Text = c.Nome;
-            txtEndereco.Text = c.Endereco;
-            mskTelefone.Text = c.Telefone;
-            txtEmail.Text = c.Email;
+            Double valor;
+            int qtd;
+
+            if (txtCliente.Text == string.Empty)
+            {
+                MessageBox.Show("Informe o cliente!");
+                txtCliente.Text = "";
+                btnPesquisaCliente.Focus();
+                return;
+            }
+
+            if (txtQuantidade.Text == string.Empty)
+            {
+                MessageBox.Show("Informe a quantidade!");
+                txtQuantidade.Text = "1";
+                txtQuantidade.Focus();
+                return;
+            }
+
+            if (p.Estoque < Convert.ToInt32(txtQuantidade.Text)  )
+            {
+                MessageBox.Show("Verifique a quantidade do Estoque!");
+                txtQuantidade.Text =  "";
+                txtQuantidade.Focus();
+                return;
+            }
+
+            valor = (Convert.ToInt32(txtQuantidade.Text) * p.Preco);
+            qtd = Convert.ToInt32(txtQuantidade.Text);
+
+            totalQtd = totalQtd + qtd;
+            mskTotalQtd.Text = totalQtd.ToString();
+
+
+            total = total + valor;
+            mskTotal.Text =  string.Format("{0:N}", total);
+
+            dgvVendas.Rows.Add("", p.Nome, p.Descricao, txtQuantidade.Text, valor, DateTime.Now,v.IdCliente,p.IdProduto);
+        }
+
+        private void RemoveValores()
+        {
+            Double valor;
+            int qtd;
+            try
+            {
+                if (dgvVendas.CurrentRow != null)
+                {
+                    qtd = Convert.ToInt32(dgvVendas.Rows[dgvVendas.CurrentRow.Index].Cells[3].Value);
+                    totalQtd = qtd - qtd;
+
+                    valor = Convert.ToDouble(dgvVendas.Rows[dgvVendas.CurrentRow.Index].Cells[4].Value);
+                    total = total - valor;
+                    
+                    dgvVendas.Rows.RemoveAt(dgvVendas.CurrentRow.Index);
+                }
+                else
+                {
+                    total = 0;
+                    valor = 0;
+                    totalQtd = 0;
+                    qtd = 0;
+                }
+                mskTotalQtd.Text = totalQtd.ToString();
+                mskTotal.Text = total.ToString();
+            }
+            catch (Exception)
+            {
+
+            }
         }
         private void LimpaCampos()
         {
-            groupBox2.Enabled = true;
-            txtNome.Text = string.Empty;
-            txtEndereco.Text = string.Empty;
-            mskTelefone.Text = string.Empty;
-            mskTelefone.Mask = "(99) 9 9999-9999";
-            txtEmail.Text = string.Empty;
-            txtNome.Focus();
+            //dgvVendas.CancelEdit();
+            //dgvVendas.Columns.Clear();
+            dgvVendas.DataSource = null;
+            mskTotalQtd.Text = string.Empty;
+            mskTotalQtd.Text = string.Empty;
+            txtCliente.Text = string.Empty;
+            btnPesquisaCliente.Focus();
 
         }
 
-        private void Localiza()
+        private void LocalizaVendas()
         {
             try
             {
@@ -53,11 +124,11 @@ namespace ControleClientesProdudos.Views
 
                 string query = "select * from Vendas";
 
-                if (rdbTelefone.Checked && txtPesquisaCliente.Text != string.Empty)
-                    query = "select * from Vendas WHERE telefone LIKE '%" + txtPesquisaCliente.Text + "%'";
+                // if (rdbData.Checked && txtCliente.Text != string.Empty)
+                //query = "select * from Vendas WHERE telefone LIKE '%" + txtCliente.Text + "%'";
 
-                if (rdbNomeCliente.Checked && txtPesquisaCliente.Text != string.Empty)
-                    query = "select * from Vendas WHERE nome LIKE '%" + txtPesquisaCliente.Text + "%'";
+                // if (rdbCliente.Checked && txtCliente.Text != string.Empty)
+                //query = "select * from Vendas WHERE nome LIKE '%" + txtCliente.Text + "%'";
 
                 NpgsqlDataReader reader = conexao.ExecutaComandoSelect(query);
 
@@ -66,7 +137,7 @@ namespace ControleClientesProdudos.Views
                     NpgsqlDataReader readers = conexao.ExecutaComandoSelect(query);
                     DataTable dt = new DataTable();
                     dt.Load(readers);
-                    dgvClientes.DataSource = dt;
+                    dgvVendas.DataSource = dt;
                 }
             }
             catch (Exception exp)
@@ -74,101 +145,94 @@ namespace ControleClientesProdudos.Views
                 MessageBox.Show(exp.ToString(), "Erro ao pesquisar!");
             }
         }
+
+        private void LocalizaProdutos()
+        {
+            try
+            {
+                ConexaoDB conexao = new ConexaoDB();
+
+                string query = "select * from Produtos";
+
+                if (rdbDescricao.Checked && txtPesquisaProduto.Text != string.Empty)
+                    query = "select * from Produtos WHERE descricao LIKE '%" + txtPesquisaProduto.Text + "%'";
+
+                if (rdbNomeProduto.Checked && txtPesquisaProduto.Text != string.Empty)
+                    query = "select * from Produtos WHERE nome LIKE '%" + txtPesquisaProduto.Text + "%'";
+
+                NpgsqlDataReader reader = conexao.ExecutaComandoSelect(query);
+
+                if (reader.HasRows)
+                {
+                    NpgsqlDataReader readers = conexao.ExecutaComandoSelect(query);
+                    DataTable dt = new DataTable();
+                    dt.Load(readers);
+                    dgvProdutos.DataSource = dt;
+                }
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show(exp.ToString(), "Erro ao pesquisar!");
+            }
+        }
+
         private void btnFechar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btnIncluir_Click(object sender, EventArgs e)
-        {
-            if (txtNome.Text == string.Empty)
-            {
-                MessageBox.Show("Informe o Nome!");
-                txtNome.Focus();
-                return;
-            }
-
-            if (mskTelefone.Text == "(  )       -")
-            {
-                MessageBox.Show("Informe o telefone!");
-                mskTelefone.Focus();
-                return;
-            }
-
-            c.Nome = txtNome.Text;
-            c.Endereco = txtEndereco.Text;
-            c.Telefone = mskTelefone.Text;
-            c.Email = txtEmail.Text;
-            c.Insere();
-            c.SelecionaTipoTexto();
-            btnIncluir.Enabled = false;
-            rdbNomeCliente.Checked = true;
-            txtPesquisaCliente.Text = txtNome.Text;
-            Localiza();
-        }
-
-        private void btnAlterar_Click(object sender, EventArgs e)
-        {
-
-            if (txtNome.Text == string.Empty)
-            {
-                MessageBox.Show("Informe o Nome!");
-                txtNome.Focus();
-                return;
-            }
-
-            if (mskTelefone.Text == "(  )       -")
-            {
-                MessageBox.Show("Informe o telefone!");
-                mskTelefone.Focus();
-                return;
-            }
-
-            c.Nome = txtNome.Text;
-            c.Endereco = txtEndereco.Text;
-            c.Telefone = mskTelefone.Text;
-            c.Email = txtEmail.Text;
-
-            c.Altera();
-            c.SelecionaTipoInt("idCliente", c.IdCliente);
-            CarregaCampos();
-            rdbNomeCliente.Checked = true;
-            txtPesquisaCliente.Text = txtNome.Text;
-            Localiza();
-        }
-
-        private void btnExcluir_Click(object sender, EventArgs e)
-        {
-            c.Deletar();
-            c.SelecionaTipoInt("idCliente", c.IdCliente);
-            Localiza();
-        }
-
 
         private void btnPesquisa_Click(object sender, EventArgs e)
         {
-            Localiza();
+
+            frmClientesCadastro frmPesqCli = new frmClientesCadastro();
+
+            frmPesqCli.ShowDialog(this);
+            v.IdCliente = frmPesqCli.CodCliente;
+            v.NomeCliente = frmPesqCli.noCliente;
+
+            txtCliente.Text = v.NomeCliente;
+        }
+
+        private void btnPesquisaProduto_Click(object sender, EventArgs e)
+        {
+            LocalizaProdutos();
+        }
+
+
+        private void LocalizaProdutos(object sender, EventArgs e)
+        {
+            LocalizaProdutos();
+        }
+
+        private void frmVendasCadastro_Load(object sender, EventArgs e)
+        {
+            LocalizaProdutos();
+        }
+
+        private void btnAdicionar_Click(object sender, EventArgs e)
+        {
+
+            AdicionaValores();
+        }
+
+        private void txtCliente_TextChanged(object sender, EventArgs e)
+        {
 
         }
 
-        private void btnNovo_Click(object sender, EventArgs e)
-        {
-            LimpaCampos();
-            btnIncluir.Enabled = true;
-        }
 
-        private void dgvClientes_Click(object sender, EventArgs e)
+        private void dgvProdutos_Click(object sender, EventArgs e)
         {
+            groupBox2.Enabled = true;
+
             try
             {
-                groupBox2.Enabled = true;
-
-                if (dgvClientes.CurrentCell != null && dgvClientes.CurrentCell.Value != null)
+                if (dgvProdutos.CurrentCell != null && dgvProdutos.CurrentCell.Value != null)
                 {
                     {
-                        c.IdCliente = (int)dgvClientes.CurrentCell.Value;
-                        c.SelecionaTipoInt("idCliente", c.IdCliente);
-                        CarregaCampos();
+                        p.IdProduto = (int)dgvProdutos.CurrentCell.Value;
+                        p.SelecionaTipoInt("idProduto", p.IdProduto);
                     }
                 }
             }
@@ -176,6 +240,40 @@ namespace ControleClientesProdudos.Views
             {
 
             }
+        }
+
+        private void btnRemover_Click(object sender, EventArgs e)
+        {
+            RemoveValores();
+        }
+
+        private void btnAddProduto_Click(object sender, EventArgs e)
+        {
+            frmProdutosCadastro frmPesqCli = new frmProdutosCadastro();
+            frmPesqCli.ShowDialog(this);
+            LocalizaProdutos();
+        }
+
+        private void btnFinalizarVenda_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvVendas.Rows)
+            {
+                v.Data = Convert.ToDateTime(row.Cells["data"].Value);
+                v.QtdItens = Convert.ToInt32( row.Cells["qtdItens"].Value);
+                v.IdCliente = (int)row.Cells["idCliente"].Value;
+                v.IdProduto = (int)row.Cells["idProdutos"].Value;
+                v.Insere();
+                p.AlteraEstoque(v.QtdItens);
+                dgvVendas.Rows.RemoveAt(row.Index);
+            }
+            LimpaCampos();
+        }
+
+        private void btnVendasRealizadas_Click(object sender, EventArgs e)
+        {
+            frmVendasRealizadas frmPesqCli = new frmVendasRealizadas();
+
+            frmPesqCli.ShowDialog(this);
         }
     }
 }

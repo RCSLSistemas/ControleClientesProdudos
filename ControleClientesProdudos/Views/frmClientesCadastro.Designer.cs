@@ -29,12 +29,6 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnNovo = new System.Windows.Forms.Button();
-            this.btnFechar = new System.Windows.Forms.Button();
-            this.btnExcluir = new System.Windows.Forms.Button();
-            this.btnAlterar = new System.Windows.Forms.Button();
-            this.btnIncluir = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.mskTelefone = new System.Windows.Forms.MaskedTextBox();
@@ -43,6 +37,12 @@
             this.lblEndereco = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnNovo = new System.Windows.Forms.Button();
+            this.btnFechar = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnAlterar = new System.Windows.Forms.Button();
+            this.btnIncluir = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnPesquisa = new System.Windows.Forms.Button();
@@ -51,6 +51,7 @@
             this.rdbNome = new System.Windows.Forms.RadioButton();
             this.rdbTelefone = new System.Windows.Forms.RadioButton();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
             this.idCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.endereco = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,6 +82,71 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cadastro";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(62, 112);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(444, 20);
+            this.txtEmail.TabIndex = 9;
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(6, 115);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(38, 13);
+            this.lblEmail.TabIndex = 8;
+            this.lblEmail.Text = "E-mail:";
+            // 
+            // mskTelefone
+            // 
+            this.mskTelefone.Location = new System.Drawing.Point(62, 83);
+            this.mskTelefone.Mask = "(99) 9 9999-9999";
+            this.mskTelefone.Name = "mskTelefone";
+            this.mskTelefone.Size = new System.Drawing.Size(91, 20);
+            this.mskTelefone.TabIndex = 5;
+            // 
+            // lblTelefone
+            // 
+            this.lblTelefone.AutoSize = true;
+            this.lblTelefone.Location = new System.Drawing.Point(6, 86);
+            this.lblTelefone.Name = "lblTelefone";
+            this.lblTelefone.Size = new System.Drawing.Size(52, 13);
+            this.lblTelefone.TabIndex = 4;
+            this.lblTelefone.Text = "Telefone:";
+            // 
+            // txtEndereco
+            // 
+            this.txtEndereco.Location = new System.Drawing.Point(62, 56);
+            this.txtEndereco.Name = "txtEndereco";
+            this.txtEndereco.Size = new System.Drawing.Size(444, 20);
+            this.txtEndereco.TabIndex = 3;
+            // 
+            // lblEndereco
+            // 
+            this.lblEndereco.AutoSize = true;
+            this.lblEndereco.Location = new System.Drawing.Point(6, 59);
+            this.lblEndereco.Name = "lblEndereco";
+            this.lblEndereco.Size = new System.Drawing.Size(56, 13);
+            this.lblEndereco.TabIndex = 2;
+            this.lblEndereco.Text = "Endereço:";
+            // 
+            // txtNome
+            // 
+            this.txtNome.Location = new System.Drawing.Point(62, 27);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(444, 20);
+            this.txtNome.TabIndex = 2;
+            // 
+            // lblNome
+            // 
+            this.lblNome.AutoSize = true;
+            this.lblNome.Location = new System.Drawing.Point(6, 30);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(38, 13);
+            this.lblNome.TabIndex = 0;
+            this.lblNome.Text = "Nome:";
             // 
             // panel1
             // 
@@ -150,73 +216,9 @@
             this.btnIncluir.UseVisualStyleBackColor = true;
             this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click);
             // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(62, 112);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(444, 20);
-            this.txtEmail.TabIndex = 9;
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(6, 115);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(38, 13);
-            this.lblEmail.TabIndex = 8;
-            this.lblEmail.Text = "E-mail:";
-            // 
-            // mskTelefone
-            // 
-            this.mskTelefone.Location = new System.Drawing.Point(62, 83);
-            this.mskTelefone.Mask = "(99) 9 9999-9999";
-            this.mskTelefone.Name = "mskTelefone";
-            this.mskTelefone.Size = new System.Drawing.Size(91, 20);
-            this.mskTelefone.TabIndex = 5;
-            // 
-            // lblTelefone
-            // 
-            this.lblTelefone.AutoSize = true;
-            this.lblTelefone.Location = new System.Drawing.Point(6, 86);
-            this.lblTelefone.Name = "lblTelefone";
-            this.lblTelefone.Size = new System.Drawing.Size(52, 13);
-            this.lblTelefone.TabIndex = 4;
-            this.lblTelefone.Text = "Telefone:";
-            // 
-            // txtEndereco
-            // 
-            this.txtEndereco.Location = new System.Drawing.Point(62, 56);
-            this.txtEndereco.Name = "txtEndereco";
-            this.txtEndereco.Size = new System.Drawing.Size(444, 20);
-            this.txtEndereco.TabIndex = 3;
-            // 
-            // lblEndereco
-            // 
-            this.lblEndereco.AutoSize = true;
-            this.lblEndereco.Location = new System.Drawing.Point(6, 59);
-            this.lblEndereco.Name = "lblEndereco";
-            this.lblEndereco.Size = new System.Drawing.Size(56, 13);
-            this.lblEndereco.TabIndex = 2;
-            this.lblEndereco.Text = "Endereço:";
-            // 
-            // txtNome
-            // 
-            this.txtNome.Location = new System.Drawing.Point(62, 27);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(444, 20);
-            this.txtNome.TabIndex = 2;
-            // 
-            // lblNome
-            // 
-            this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(6, 30);
-            this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(38, 13);
-            this.lblNome.TabIndex = 0;
-            this.lblNome.Text = "Nome:";
-            // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.gpbTipoBusca);
             this.groupBox1.Controls.Add(this.dgvClientes);
@@ -292,6 +294,8 @@
             // 
             // dgvClientes
             // 
+            this.dgvClientes.AllowUserToAddRows = false;
+            this.dgvClientes.AllowUserToDeleteRows = false;
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idCliente,
@@ -299,25 +303,40 @@
             this.endereco,
             this.telefone,
             this.email});
-            this.dgvClientes.Location = new System.Drawing.Point(9, 66);
+            this.dgvClientes.Location = new System.Drawing.Point(9, 77);
             this.dgvClientes.Name = "dgvClientes";
+            this.dgvClientes.ReadOnly = true;
             this.dgvClientes.Size = new System.Drawing.Size(503, 162);
             this.dgvClientes.TabIndex = 2;
             this.dgvClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellClick);
             this.dgvClientes.Click += new System.EventHandler(this.dgvClientes_Click);
+            this.dgvClientes.DoubleClick += new System.EventHandler(this.dgvClientes_DoubleClick);
+            this.dgvClientes.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvClientes_MouseClick);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(358, 61);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(154, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Dulplo para adicionar o Cliente!";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // idCliente
             // 
             this.idCliente.DataPropertyName = "idCliente";
             this.idCliente.HeaderText = "Código";
             this.idCliente.Name = "idCliente";
-            this.idCliente.Width = 50;
+            this.idCliente.ReadOnly = true;
+            this.idCliente.Width = 45;
             // 
             // nome
             // 
             this.nome.DataPropertyName = "nome";
             this.nome.HeaderText = "Nome";
             this.nome.Name = "nome";
+            this.nome.ReadOnly = true;
             this.nome.Width = 200;
             // 
             // endereco
@@ -325,6 +344,7 @@
             this.endereco.DataPropertyName = "endereco";
             this.endereco.HeaderText = "Endereço";
             this.endereco.Name = "endereco";
+            this.endereco.ReadOnly = true;
             this.endereco.Width = 150;
             // 
             // telefone
@@ -332,12 +352,14 @@
             this.telefone.DataPropertyName = "telefone";
             this.telefone.HeaderText = "Telefone";
             this.telefone.Name = "telefone";
+            this.telefone.ReadOnly = true;
             // 
             // email
             // 
             this.email.DataPropertyName = "email";
             this.email.HeaderText = "E-mail";
             this.email.Name = "email";
+            this.email.ReadOnly = true;
             this.email.Width = 150;
             // 
             // frmClientesCadastro
@@ -351,10 +373,12 @@
             this.Name = "frmClientesCadastro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clientes";
+            this.Load += new System.EventHandler(this.frmClientesCadastro_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.gpbTipoBusca.ResumeLayout(false);
@@ -388,6 +412,7 @@
         private System.Windows.Forms.Button btnIncluir;
         private System.Windows.Forms.Button btnNovo;
         public System.Windows.Forms.Button btnPesquisa;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn endereco;

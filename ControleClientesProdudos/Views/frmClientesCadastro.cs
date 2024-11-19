@@ -24,8 +24,10 @@ namespace ControleClientesProdudos.Views
         public frmClientesCadastro()
         {
             InitializeComponent();
-
         }
+        public int CodCliente;
+        public string noCliente;
+        
         private void CarregaCampos()
         {
             txtNome.Text = c.Nome;
@@ -42,7 +44,6 @@ namespace ControleClientesProdudos.Views
             mskTelefone.Mask = "(99) 9 9999-9999";
             txtEmail.Text = string.Empty;
             txtNome.Focus();
-
         }
 
         private void Localiza()
@@ -148,7 +149,6 @@ namespace ControleClientesProdudos.Views
         private void btnPesquisa_Click(object sender, EventArgs e)
         {
             Localiza();
-
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
@@ -181,6 +181,35 @@ namespace ControleClientesProdudos.Views
         private void dgvClientes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void dgvClientes_DoubleClick(object sender, EventArgs e)
+        {   
+            Vendas v = new Vendas();
+            CodCliente = c.IdCliente ;
+            noCliente = c.Nome.ToString();
+ 
+            this.Close();
+        }
+
+        private void dgvClientes_MouseClick(object sender, MouseEventArgs e)
+        {
+            ToolTip toolTip1 = new ToolTip();
+            toolTip1.SetToolTip(this.dgvClientes, "Duplo clique para adicionar o cliente!");
+
+        }
+
+        private void frmClientesCadastro_Load(object sender, EventArgs e)
+        {
+            ToolTip toolTip1 = new ToolTip();
+
+            toolTip1.AutoPopDelay = 5000;
+            toolTip1.InitialDelay = 1000;
+            toolTip1.ReshowDelay = 500;
+            toolTip1.ShowAlways = true;
+
+            toolTip1.SetToolTip(this.dgvClientes, "Duplo clique para adicionar o cliente!");
+            Localiza();
         }
     }
 }

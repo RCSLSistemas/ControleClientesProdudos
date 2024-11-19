@@ -14,13 +14,13 @@ namespace ControleClientesProdudos.Models
         private int idProduto;
         private string nome;
         private string descricao;
-        private double preco;
+        private Double preco;
         private int estoque;
 
         public int IdProduto { get => idProduto; set => idProduto = value; }
         public string Nome { get => nome; set => nome = value; }
         public string Descricao { get => descricao; set => descricao = value; }
-        public double Preco { get => preco; set => preco = value; }
+        public Double Preco { get => preco; set => preco = value; }
         public int Estoque { get => estoque; set => estoque = value; }
 
         /// <summary>
@@ -31,7 +31,7 @@ namespace ControleClientesProdudos.Models
             int i = conexao.ExecutaComandoInsert("INSERT INTO  produtos(nome, descricao, preco, estoque) " +
             "VALUES ( '" + Nome +
             "', '" + Descricao +
-            "', " + Preco +
+            "', " + Preco.ToString().Replace(",", ".") +
             ", " + Estoque +
             ");");
         }
@@ -43,10 +43,21 @@ namespace ControleClientesProdudos.Models
             int i = conexao.ExecutaComandoInsert("Update produtos set " +
             "nome = '" + Nome + "', " +
             "descricao = '" + Descricao + "', " +
-            "preco = " + Preco + "," +
+            "preco = " + Preco.ToString().Replace(",",".") + " ," +
             "estoque = " + Estoque + "" +
             " WHERE idProduto = " + idProduto + "");
         }
+        /// <summary>
+        /// Rotina de retirada de quantidade estoque
+        /// </summary>
+        /// <param name="qtd">quantidade de retirada</param>
+        public void AlteraEstoque(int qtd)
+        {
+            int i = conexao.ExecutaComandoInsert("Update produtos set " +
+            "estoque = estoque " +  - qtd + "" +
+            " WHERE idProduto = " + idProduto + "");
+        }
+
         /// <summary>
         /// Rotina para Selecionar dados da tabela por Texto 
         /// </summary>
@@ -65,7 +76,7 @@ namespace ControleClientesProdudos.Models
                 idProduto = (int)reader["idProduto"];
                 Nome = reader["nome"].ToString().Trim();
                 descricao = reader["descricao"].ToString().Trim();
-                preco = (double)reader["preco"];
+                preco = (Double)reader["preco"];
                 estoque = (int)reader["estoque"];
             }
         }
@@ -86,7 +97,7 @@ namespace ControleClientesProdudos.Models
                 idProduto = (int)reader["idProduto"];
                 Nome = reader["nome"].ToString().Trim();
                 descricao = reader["descricao"].ToString().Trim();
-                preco = (double)reader["preco"];
+                preco = (Double)reader["preco"];
                 estoque = (int)reader["estoque"];
             }
         }

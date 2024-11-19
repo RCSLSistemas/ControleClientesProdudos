@@ -15,13 +15,18 @@ namespace ControleClientesProdudos.Models
         private int qtdItens;
         private DateTime data;
         private int idCliente;
+        private string nomeCliente;
         private int idProduto;
+        private string nomeProduto;
 
         public int IdVenda { get => idVenda; set => idVenda = value; }
         public int QtdItens { get => qtdItens; set => qtdItens = value; }
         public DateTime Data { get => data; set => data = value; }
         public int IdCliente { get => idCliente; set => idCliente = value; }
+        public string NomeCliente { get => nomeCliente; set => nomeCliente = value; }
+
         public int IdProduto { get => idProduto; set => idProduto = value; }
+        public string NomeProduto { get => nomeProduto; set => nomeProduto = value; }
 
         /// <summary>
         /// Rotina para Inserir dados
@@ -31,9 +36,9 @@ namespace ControleClientesProdudos.Models
             int i = conexao.ExecutaComandoInsert("INSERT INTO  vendas(qtdItens, data, idCliente, idProduto) " +
             "VALUES ( '" + QtdItens +
             "', '" + Data +
-            "', '" + IdCliente +
-            "', '" + IdProduto +
-            "');");
+            "', " + IdCliente +
+            ", " + IdProduto +
+            ");");
         }
         /// <summary>
         /// Rotina para Alterar Registro

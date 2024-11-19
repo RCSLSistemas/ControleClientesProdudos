@@ -28,13 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnNovo = new System.Windows.Forms.Button();
-            this.btnFechar = new System.Windows.Forms.Button();
-            this.btnExcluir = new System.Windows.Forms.Button();
-            this.btnAlterar = new System.Windows.Forms.Button();
-            this.btnIncluir = new System.Windows.Forms.Button();
             this.txtEstoque = new System.Windows.Forms.TextBox();
             this.lblEstoque = new System.Windows.Forms.Label();
             this.mskPreco = new System.Windows.Forms.MaskedTextBox();
@@ -43,6 +38,12 @@
             this.lblDescricao = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnNovo = new System.Windows.Forms.Button();
+            this.btnFechar = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnAlterar = new System.Windows.Forms.Button();
+            this.btnIncluir = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnPesquisa = new System.Windows.Forms.Button();
@@ -75,12 +76,77 @@
             this.groupBox2.Controls.Add(this.txtNome);
             this.groupBox2.Controls.Add(this.lblNome);
             this.groupBox2.Enabled = false;
-            this.groupBox2.Location = new System.Drawing.Point(8, 270);
+            this.groupBox2.Location = new System.Drawing.Point(8, 269);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(525, 145);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cadastro";
+            // 
+            // txtEstoque
+            // 
+            this.txtEstoque.Location = new System.Drawing.Point(62, 112);
+            this.txtEstoque.Name = "txtEstoque";
+            this.txtEstoque.Size = new System.Drawing.Size(91, 20);
+            this.txtEstoque.TabIndex = 6;
+            // 
+            // lblEstoque
+            // 
+            this.lblEstoque.AutoSize = true;
+            this.lblEstoque.Location = new System.Drawing.Point(6, 115);
+            this.lblEstoque.Name = "lblEstoque";
+            this.lblEstoque.Size = new System.Drawing.Size(49, 13);
+            this.lblEstoque.TabIndex = 8;
+            this.lblEstoque.Text = "Estoque:";
+            // 
+            // mskPreco
+            // 
+            this.mskPreco.Location = new System.Drawing.Point(62, 83);
+            this.mskPreco.Name = "mskPreco";
+            this.mskPreco.Size = new System.Drawing.Size(91, 20);
+            this.mskPreco.TabIndex = 5;
+            this.mskPreco.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mskPreco1_MaskInputRejected);
+            // 
+            // lblPreco
+            // 
+            this.lblPreco.AutoSize = true;
+            this.lblPreco.Location = new System.Drawing.Point(6, 86);
+            this.lblPreco.Name = "lblPreco";
+            this.lblPreco.Size = new System.Drawing.Size(38, 13);
+            this.lblPreco.TabIndex = 4;
+            this.lblPreco.Text = "Preço:";
+            // 
+            // txtDescricao
+            // 
+            this.txtDescricao.Location = new System.Drawing.Point(62, 56);
+            this.txtDescricao.Name = "txtDescricao";
+            this.txtDescricao.Size = new System.Drawing.Size(444, 20);
+            this.txtDescricao.TabIndex = 3;
+            // 
+            // lblDescricao
+            // 
+            this.lblDescricao.AutoSize = true;
+            this.lblDescricao.Location = new System.Drawing.Point(6, 59);
+            this.lblDescricao.Name = "lblDescricao";
+            this.lblDescricao.Size = new System.Drawing.Size(58, 13);
+            this.lblDescricao.TabIndex = 2;
+            this.lblDescricao.Text = "Descrição:";
+            // 
+            // txtNome
+            // 
+            this.txtNome.Location = new System.Drawing.Point(62, 27);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(444, 20);
+            this.txtNome.TabIndex = 2;
+            // 
+            // lblNome
+            // 
+            this.lblNome.AutoSize = true;
+            this.lblNome.Location = new System.Drawing.Point(6, 30);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(38, 13);
+            this.lblNome.TabIndex = 0;
+            this.lblNome.Text = "Nome:";
             // 
             // panel1
             // 
@@ -149,71 +215,6 @@
             this.btnIncluir.Text = "&Incluir";
             this.btnIncluir.UseVisualStyleBackColor = true;
             this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click);
-            // 
-            // txtEstoque
-            // 
-            this.txtEstoque.Location = new System.Drawing.Point(62, 112);
-            this.txtEstoque.Name = "txtEstoque";
-            this.txtEstoque.Size = new System.Drawing.Size(91, 20);
-            this.txtEstoque.TabIndex = 6;
-            // 
-            // lblEstoque
-            // 
-            this.lblEstoque.AutoSize = true;
-            this.lblEstoque.Location = new System.Drawing.Point(6, 115);
-            this.lblEstoque.Name = "lblEstoque";
-            this.lblEstoque.Size = new System.Drawing.Size(49, 13);
-            this.lblEstoque.TabIndex = 8;
-            this.lblEstoque.Text = "Estoque:";
-            // 
-            // mskPreco
-            // 
-            this.mskPreco.Location = new System.Drawing.Point(62, 83);
-            this.mskPreco.Mask = "99999.99";
-            this.mskPreco.Name = "mskPreco";
-            this.mskPreco.Size = new System.Drawing.Size(91, 20);
-            this.mskPreco.TabIndex = 5;
-            // 
-            // lblPreco
-            // 
-            this.lblPreco.AutoSize = true;
-            this.lblPreco.Location = new System.Drawing.Point(6, 86);
-            this.lblPreco.Name = "lblPreco";
-            this.lblPreco.Size = new System.Drawing.Size(38, 13);
-            this.lblPreco.TabIndex = 4;
-            this.lblPreco.Text = "Preço:";
-            // 
-            // txtDescricao
-            // 
-            this.txtDescricao.Location = new System.Drawing.Point(62, 56);
-            this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(444, 20);
-            this.txtDescricao.TabIndex = 3;
-            // 
-            // lblDescricao
-            // 
-            this.lblDescricao.AutoSize = true;
-            this.lblDescricao.Location = new System.Drawing.Point(6, 59);
-            this.lblDescricao.Name = "lblDescricao";
-            this.lblDescricao.Size = new System.Drawing.Size(58, 13);
-            this.lblDescricao.TabIndex = 2;
-            this.lblDescricao.Text = "Descrição:";
-            // 
-            // txtNome
-            // 
-            this.txtNome.Location = new System.Drawing.Point(62, 27);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(444, 20);
-            this.txtNome.TabIndex = 2;
-            // 
-            // lblNome
-            // 
-            this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(6, 30);
-            this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(38, 13);
-            this.lblNome.TabIndex = 0;
-            this.lblNome.Text = "Nome:";
             // 
             // groupBox1
             // 
@@ -292,6 +293,8 @@
             // 
             // dgvProdutos
             // 
+            this.dgvProdutos.AllowUserToAddRows = false;
+            this.dgvProdutos.AllowUserToDeleteRows = false;
             this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProdutos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idProduto,
@@ -301,6 +304,7 @@
             this.estoque});
             this.dgvProdutos.Location = new System.Drawing.Point(9, 66);
             this.dgvProdutos.Name = "dgvProdutos";
+            this.dgvProdutos.ReadOnly = true;
             this.dgvProdutos.Size = new System.Drawing.Size(503, 180);
             this.dgvProdutos.TabIndex = 2;
             this.dgvProdutos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProdutos_CellClick);
@@ -311,13 +315,15 @@
             this.idProduto.DataPropertyName = "idProduto";
             this.idProduto.HeaderText = "Código";
             this.idProduto.Name = "idProduto";
-            this.idProduto.Width = 50;
+            this.idProduto.ReadOnly = true;
+            this.idProduto.Width = 45;
             // 
             // nome
             // 
             this.nome.DataPropertyName = "nome";
             this.nome.HeaderText = "Nome";
             this.nome.Name = "nome";
+            this.nome.ReadOnly = true;
             this.nome.Width = 150;
             // 
             // descricao
@@ -325,13 +331,18 @@
             this.descricao.DataPropertyName = "descricao";
             this.descricao.HeaderText = "Descrição";
             this.descricao.Name = "descricao";
+            this.descricao.ReadOnly = true;
             this.descricao.Width = 150;
             // 
             // preco
             // 
             this.preco.DataPropertyName = "preco";
+            dataGridViewCellStyle2.Format = "N2";
+            dataGridViewCellStyle2.NullValue = "0";
+            this.preco.DefaultCellStyle = dataGridViewCellStyle2;
             this.preco.HeaderText = "Preço";
             this.preco.Name = "preco";
+            this.preco.ReadOnly = true;
             this.preco.Width = 80;
             // 
             // estoque
@@ -339,6 +350,7 @@
             this.estoque.DataPropertyName = "estoque";
             this.estoque.HeaderText = "Estoque";
             this.estoque.Name = "estoque";
+            this.estoque.ReadOnly = true;
             // 
             // frmProdutosCadastro
             // 

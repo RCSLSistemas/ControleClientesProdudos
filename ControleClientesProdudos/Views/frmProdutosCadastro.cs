@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,7 +30,7 @@ namespace ControleClientesProdudos.Views
         {
             txtNome.Text = c.Nome;
             txtDescricao.Text = c.Descricao;
-            mskPreco.Text = c.Preco.ToString().PadLeft(7,'0');
+            mskPreco.Text = c.Preco.ToString();
             txtEstoque.Text = c.Estoque.ToString();
         }
         private void LimpaCampos()
@@ -38,7 +39,7 @@ namespace ControleClientesProdudos.Views
             txtNome.Text = string.Empty;
             txtDescricao.Text = string.Empty;
             mskPreco.Text = string.Empty;
-            mskPreco.Mask = "99999,99";
+            mskPreco.Mask = "";
             txtEstoque.Text = string.Empty;
             txtNome.Focus();
         }
@@ -72,6 +73,7 @@ namespace ControleClientesProdudos.Views
                 MessageBox.Show(exp.ToString(), "Erro ao pesquisar!");
             }
         }
+
         private void btnFechar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -95,7 +97,7 @@ namespace ControleClientesProdudos.Views
 
             c.Nome = txtNome.Text;
             c.Descricao = txtDescricao.Text;
-            c.Preco = Convert.ToDouble(mskPreco.Text);
+            c.Preco = double.Parse(mskPreco.Text.Replace(",", "."), CultureInfo.InvariantCulture);
             c.Estoque = Convert.ToInt32(txtEstoque.Text);
             c.Insere();
             c.SelecionaTipoTexto();
@@ -125,7 +127,9 @@ namespace ControleClientesProdudos.Views
 
             c.Nome = txtNome.Text;
             c.Descricao = txtDescricao.Text;
-            c.Preco = Convert.ToDouble(mskPreco.Text);
+
+            c.Preco =  double.Parse(mskPreco.Text.Replace(",","."), CultureInfo.InvariantCulture);
+
             c.Estoque = Convert.ToInt32(txtEstoque.Text);
 
             c.Altera();
@@ -147,7 +151,6 @@ namespace ControleClientesProdudos.Views
         private void btnPesquisa_Click(object sender, EventArgs e)
         {
             Localiza();
-
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
@@ -178,6 +181,16 @@ namespace ControleClientesProdudos.Views
         }
 
         private void dgvProdutos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mskPreco1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
         }

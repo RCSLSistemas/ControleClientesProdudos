@@ -35,7 +35,7 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnVendas = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.relatóriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,7 +67,7 @@
             this.toolStripSeparator3,
             this.saveToolStripMenuItem,
             this.toolStripSeparator4,
-            this.saveAsToolStripMenuItem,
+            this.mnVendas,
             this.toolStripSeparator5,
             this.relatóriosToolStripMenuItem,
             this.toolStripSeparator1,
@@ -105,13 +105,13 @@
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(177, 6);
             // 
-            // saveAsToolStripMenuItem
+            // mnVendas
             // 
-            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.R)));
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.saveAsToolStripMenuItem.Text = "&Vendas";
-            this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.SaveAsToolStripMenuItem_Click);
+            this.mnVendas.Name = "mnVendas";
+            this.mnVendas.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.R)));
+            this.mnVendas.Size = new System.Drawing.Size(180, 22);
+            this.mnVendas.Text = "&Vendas";
+            this.mnVendas.Click += new System.EventHandler(this.mnVendas_Click);
             // 
             // toolStripSeparator5
             // 
@@ -131,19 +131,20 @@
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.clientesToolStripMenuItem.Text = "Vendas";
+            this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
             // produdosToolStripMenuItem
             // 
             this.produdosToolStripMenuItem.Name = "produdosToolStripMenuItem";
-            this.produdosToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.produdosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.produdosToolStripMenuItem.Text = "Clientes";
             // 
             // estoqueToolStripMenuItem
             // 
             this.estoqueToolStripMenuItem.Name = "estoqueToolStripMenuItem";
-            this.estoqueToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.estoqueToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.estoqueToolStripMenuItem.Text = "Estoque";
             // 
             // toolStripSeparator1
@@ -206,7 +207,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnInicio;
         private System.Windows.Forms.ToolStripMenuItem mnClientesCad;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnVendas;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
