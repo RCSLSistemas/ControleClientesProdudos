@@ -9,7 +9,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>RELATÓRIO DE VENDAS REALIZADAS</Value>
+                <Value>RELATÓRIO DOS CLIENTES</Value>
                 <Style>
                   <FontSize>14pt</FontSize>
                   <FontWeight>Bold</FontWeight>
@@ -22,10 +22,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>0.10583cm</Top>
-        <Left>2.81277cm</Left>
+        <Top>0.07056cm</Top>
+        <Left>0.32757cm</Left>
         <Height>0.65292cm</Height>
-        <Width>22.225cm</Width>
+        <Width>24.7102cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -40,16 +40,13 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.50882cm</Width>
-            </TablixColumn>
-            <TablixColumn>
               <Width>6.20417cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>6.02778cm</Width>
+              <Width>6.53049cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.28833cm</Width>
+              <Width>4.29444cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>7.6811cm</Width>
@@ -59,36 +56,6 @@
             <TablixRow>
               <Height>0.6cm</Height>
               <TablixCells>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox4">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Data da Venda</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox4</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox14">
@@ -128,7 +95,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Nome do Produto</Value>
+                              <Value>Endereco</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -158,7 +125,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Quantidade</Value>
+                              <Value>Telefone</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -190,13 +157,11 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Total</Value>
+                              <Value>E-mail</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style>
-                            <TextAlign>Right</TextAlign>
-                          </Style>
+                          <Style />
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox12</rd:DefaultName>
@@ -220,36 +185,6 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Data">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!Data.Value</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Data</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
                     <Textbox Name="NomeCliente">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
@@ -257,7 +192,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!NomeCliente.Value</Value>
+                              <Value>=Fields!Nome.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -287,7 +222,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!NomeProduto.Value</Value>
+                              <Value>=Fields!Endereco.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -310,14 +245,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="QtdItens">
+                    <Textbox Name="Telefone">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!QtdItens.Value</Value>
+                              <Value>=Fields!Telefone.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -326,7 +261,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>QtdItens</rd:DefaultName>
+                      <rd:DefaultName>Telefone</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -342,23 +277,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="QtdItens1">
+                    <Textbox Name="Email">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!ValorTotal.Value</Value>
+                              <Value>=Fields!Email.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style>
-                            <TextAlign>Right</TextAlign>
-                          </Style>
+                          <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>QtdItens1</rd:DefaultName>
+                      <rd:DefaultName>Email</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -378,7 +311,6 @@
         </TablixBody>
         <TablixColumnHierarchy>
           <TablixMembers>
-            <TablixMember />
             <TablixMember />
             <TablixMember />
             <TablixMember />
@@ -411,7 +343,7 @@
     <Height>2.98958in</Height>
     <Style />
   </Body>
-  <Width>9.91989in</Width>
+  <Width>10.05531in</Width>
   <Page>
     <PageHeader>
       <Height>2.40771cm</Height>
@@ -533,51 +465,46 @@
       </ConnectionProperties>
       <rd:DataSourceID>b1a97d89-c5c5-477f-a3fa-b16b4caf2033</rd:DataSourceID>
     </DataSource>
+    <DataSource Name="ControleClientesProdudosModels3">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>18d8174f-57e7-4b83-91f8-01c41050900c</rd:DataSourceID>
+    </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="DataSet1">
       <Query>
-        <DataSourceName>ControleClientesProdudosModels2</DataSourceName>
+        <DataSourceName>ControleClientesProdudosModels3</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="Data">
-          <DataField>Data</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
+        <Field Name="Email">
+          <DataField>Email</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Endereco">
+          <DataField>Endereco</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="IdCliente">
           <DataField>IdCliente</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="IdProduto">
-          <DataField>IdProduto</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="IdVenda">
-          <DataField>IdVenda</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="NomeCliente">
-          <DataField>NomeCliente</DataField>
+        <Field Name="Nome">
+          <DataField>Nome</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="NomeProduto">
-          <DataField>NomeProduto</DataField>
+        <Field Name="Telefone">
+          <DataField>Telefone</DataField>
           <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="QtdItens">
-          <DataField>QtdItens</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="ValorTotal">
-          <DataField>ValorTotal</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>ControleClientesProdudos.Models</rd:DataSetName>
-        <rd:TableName>Vendas</rd:TableName>
-        <rd:ObjectDataSourceType>ControleClientesProdudos.Models.Vendas, ControleClientesProdudos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:TableName>Clientes</rd:TableName>
+        <rd:ObjectDataSourceType>ControleClientesProdudos.Models.Clientes, ControleClientesProdudos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

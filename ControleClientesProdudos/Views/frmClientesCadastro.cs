@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ControleClientesProdudos.Controls;
 using ControleClientesProdudos.Models;
+using ControleClientesProdudos.Relatorios;
 using Npgsql;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
@@ -21,6 +22,7 @@ namespace ControleClientesProdudos.Views
     public partial class frmClientesCadastro : Form
     {
         Clientes c = new Clientes();
+        DataTable dt = new DataTable();
         public frmClientesCadastro()
         {
             InitializeComponent();
@@ -210,6 +212,28 @@ namespace ControleClientesProdudos.Views
 
             toolTip1.SetToolTip(this.dgvClientes, "Duplo clique para adicionar o cliente!");
             Localiza();
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+
+            dt.Columns.Add("Nome");
+            dt.Columns.Add("Endereco");
+            dt.Columns.Add("Telefone");
+            dt.Columns.Add("Email");
+ 
+
+            foreach (DataGridViewRow item in dgvClientes.Rows)
+            {
+                dt.Rows.Add(item.Cells["Nome"].Value.ToString(),
+                    item.Cells["Endereco"].Value.ToString(),
+                    item.Cells["Telefone"].Value.ToString(),
+                    item.Cells["email"].Value.ToString());
+
+            }
+
+            frmRelClientes frmPesqCli = new frmRelClientes(dt);
+            frmPesqCli.ShowDialog(this);
         }
     }
 }

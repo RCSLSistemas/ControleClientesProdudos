@@ -9,7 +9,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>RELATÓRIO DE VENDAS REALIZADAS</Value>
+                <Value>RELATÓRIO DOS PRODUTOS</Value>
                 <Style>
                   <FontSize>14pt</FontSize>
                   <FontWeight>Bold</FontWeight>

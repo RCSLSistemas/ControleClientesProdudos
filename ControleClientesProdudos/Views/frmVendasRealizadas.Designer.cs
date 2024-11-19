@@ -31,7 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnRelatorio = new System.Windows.Forms.Button();
+            this.btnImprimir = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -63,23 +63,23 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnRelatorio);
+            this.panel1.Controls.Add(this.btnImprimir);
             this.panel1.Controls.Add(this.btnFechar);
             this.panel1.Location = new System.Drawing.Point(8, 313);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(617, 48);
             this.panel1.TabIndex = 8;
             // 
-            // btnRelatorio
+            // btnImprimir
             // 
-            this.btnRelatorio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRelatorio.Location = new System.Drawing.Point(409, 10);
-            this.btnRelatorio.Name = "btnRelatorio";
-            this.btnRelatorio.Size = new System.Drawing.Size(93, 32);
-            this.btnRelatorio.TabIndex = 4;
-            this.btnRelatorio.Text = "&Relatorio";
-            this.btnRelatorio.UseVisualStyleBackColor = true;
-            this.btnRelatorio.Click += new System.EventHandler(this.btnRelatorio_Click);
+            this.btnImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimir.Location = new System.Drawing.Point(409, 10);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(93, 32);
+            this.btnImprimir.TabIndex = 4;
+            this.btnImprimir.Text = "&Imprimir";
+            this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnRelatorio_Click);
             // 
             // btnFechar
             // 
@@ -334,7 +334,7 @@
         private System.Windows.Forms.Label lblDe;
         private System.Windows.Forms.DateTimePicker dtpDataFim;
         private System.Windows.Forms.Panel pnlData;
-        private System.Windows.Forms.Button btnRelatorio;
+        private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.DataGridViewTextBoxColumn data;
         private System.Windows.Forms.DataGridViewTextBoxColumn cliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn produto;

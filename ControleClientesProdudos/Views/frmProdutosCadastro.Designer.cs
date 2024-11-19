@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtEstoque = new System.Windows.Forms.TextBox();
             this.lblEstoque = new System.Windows.Forms.Label();
@@ -39,6 +39,7 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnImprimir = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
@@ -150,6 +151,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnImprimir);
             this.panel1.Controls.Add(this.btnNovo);
             this.panel1.Controls.Add(this.btnFechar);
             this.panel1.Controls.Add(this.btnExcluir);
@@ -160,12 +162,23 @@
             this.panel1.Size = new System.Drawing.Size(525, 48);
             this.panel1.TabIndex = 8;
             // 
+            // btnImprimir
+            // 
+            this.btnImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimir.Location = new System.Drawing.Point(356, 9);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(75, 32);
+            this.btnImprimir.TabIndex = 6;
+            this.btnImprimir.Text = "&Imprimir";
+            this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
             // btnNovo
             // 
             this.btnNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNovo.Location = new System.Drawing.Point(9, 9);
             this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(93, 32);
+            this.btnNovo.Size = new System.Drawing.Size(75, 32);
             this.btnNovo.TabIndex = 4;
             this.btnNovo.Text = "&Novo";
             this.btnNovo.UseVisualStyleBackColor = true;
@@ -174,9 +187,9 @@
             // btnFechar
             // 
             this.btnFechar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFechar.Location = new System.Drawing.Point(406, 9);
+            this.btnFechar.Location = new System.Drawing.Point(437, 9);
             this.btnFechar.Name = "btnFechar";
-            this.btnFechar.Size = new System.Drawing.Size(93, 32);
+            this.btnFechar.Size = new System.Drawing.Size(75, 32);
             this.btnFechar.TabIndex = 3;
             this.btnFechar.Text = "&Fechar";
             this.btnFechar.UseVisualStyleBackColor = true;
@@ -185,9 +198,9 @@
             // btnExcluir
             // 
             this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcluir.Location = new System.Drawing.Point(207, 9);
+            this.btnExcluir.Location = new System.Drawing.Point(171, 9);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(93, 32);
+            this.btnExcluir.Size = new System.Drawing.Size(75, 32);
             this.btnExcluir.TabIndex = 2;
             this.btnExcluir.Text = "&Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
@@ -196,9 +209,9 @@
             // btnAlterar
             // 
             this.btnAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAlterar.Location = new System.Drawing.Point(108, 9);
+            this.btnAlterar.Location = new System.Drawing.Point(90, 9);
             this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(93, 32);
+            this.btnAlterar.Size = new System.Drawing.Size(75, 32);
             this.btnAlterar.TabIndex = 1;
             this.btnAlterar.Text = "&Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
@@ -208,9 +221,9 @@
             // 
             this.btnIncluir.Enabled = false;
             this.btnIncluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIncluir.Location = new System.Drawing.Point(306, 9);
+            this.btnIncluir.Location = new System.Drawing.Point(252, 9);
             this.btnIncluir.Name = "btnIncluir";
-            this.btnIncluir.Size = new System.Drawing.Size(93, 32);
+            this.btnIncluir.Size = new System.Drawing.Size(75, 32);
             this.btnIncluir.TabIndex = 0;
             this.btnIncluir.Text = "&Incluir";
             this.btnIncluir.UseVisualStyleBackColor = true;
@@ -337,9 +350,9 @@
             // preco
             // 
             this.preco.DataPropertyName = "preco";
-            dataGridViewCellStyle2.Format = "N2";
-            dataGridViewCellStyle2.NullValue = "0";
-            this.preco.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = "0";
+            this.preco.DefaultCellStyle = dataGridViewCellStyle1;
             this.preco.HeaderText = "Preço";
             this.preco.Name = "preco";
             this.preco.ReadOnly = true;
@@ -405,5 +418,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn descricao;
         private System.Windows.Forms.DataGridViewTextBoxColumn preco;
         private System.Windows.Forms.DataGridViewTextBoxColumn estoque;
+        private System.Windows.Forms.Button btnImprimir;
     }
 }

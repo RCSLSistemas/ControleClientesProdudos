@@ -44,6 +44,7 @@
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnIncluir = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnPesquisa = new System.Windows.Forms.Button();
             this.txtPesquisa = new System.Windows.Forms.TextBox();
@@ -51,12 +52,12 @@
             this.rdbNome = new System.Windows.Forms.RadioButton();
             this.rdbTelefone = new System.Windows.Forms.RadioButton();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
             this.idCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.endereco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnImprimir = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -150,6 +151,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnImprimir);
             this.panel1.Controls.Add(this.btnNovo);
             this.panel1.Controls.Add(this.btnFechar);
             this.panel1.Controls.Add(this.btnExcluir);
@@ -165,7 +167,7 @@
             this.btnNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNovo.Location = new System.Drawing.Point(9, 9);
             this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(93, 32);
+            this.btnNovo.Size = new System.Drawing.Size(75, 32);
             this.btnNovo.TabIndex = 4;
             this.btnNovo.Text = "&Novo";
             this.btnNovo.UseVisualStyleBackColor = true;
@@ -174,9 +176,9 @@
             // btnFechar
             // 
             this.btnFechar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFechar.Location = new System.Drawing.Point(406, 9);
+            this.btnFechar.Location = new System.Drawing.Point(433, 9);
             this.btnFechar.Name = "btnFechar";
-            this.btnFechar.Size = new System.Drawing.Size(93, 32);
+            this.btnFechar.Size = new System.Drawing.Size(75, 32);
             this.btnFechar.TabIndex = 3;
             this.btnFechar.Text = "&Fechar";
             this.btnFechar.UseVisualStyleBackColor = true;
@@ -185,9 +187,9 @@
             // btnExcluir
             // 
             this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcluir.Location = new System.Drawing.Point(207, 9);
+            this.btnExcluir.Location = new System.Drawing.Point(173, 9);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(93, 32);
+            this.btnExcluir.Size = new System.Drawing.Size(75, 32);
             this.btnExcluir.TabIndex = 2;
             this.btnExcluir.Text = "&Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
@@ -196,9 +198,9 @@
             // btnAlterar
             // 
             this.btnAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAlterar.Location = new System.Drawing.Point(108, 9);
+            this.btnAlterar.Location = new System.Drawing.Point(92, 9);
             this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(93, 32);
+            this.btnAlterar.Size = new System.Drawing.Size(75, 32);
             this.btnAlterar.TabIndex = 1;
             this.btnAlterar.Text = "&Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
@@ -208,9 +210,9 @@
             // 
             this.btnIncluir.Enabled = false;
             this.btnIncluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIncluir.Location = new System.Drawing.Point(306, 9);
+            this.btnIncluir.Location = new System.Drawing.Point(254, 9);
             this.btnIncluir.Name = "btnIncluir";
-            this.btnIncluir.Size = new System.Drawing.Size(93, 32);
+            this.btnIncluir.Size = new System.Drawing.Size(75, 32);
             this.btnIncluir.TabIndex = 0;
             this.btnIncluir.Text = "&Incluir";
             this.btnIncluir.UseVisualStyleBackColor = true;
@@ -228,6 +230,16 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pesquisa";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(358, 61);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(154, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Dulplo para adicionar o Cliente!";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // groupBox3
             // 
@@ -313,16 +325,6 @@
             this.dgvClientes.DoubleClick += new System.EventHandler(this.dgvClientes_DoubleClick);
             this.dgvClientes.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvClientes_MouseClick);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(358, 61);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(154, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Dulplo para adicionar o Cliente!";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // idCliente
             // 
             this.idCliente.DataPropertyName = "idCliente";
@@ -361,6 +363,17 @@
             this.email.Name = "email";
             this.email.ReadOnly = true;
             this.email.Width = 150;
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimir.Location = new System.Drawing.Point(352, 9);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(75, 32);
+            this.btnImprimir.TabIndex = 5;
+            this.btnImprimir.Text = "&Imprimir";
+            this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // frmClientesCadastro
             // 
@@ -418,5 +431,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn endereco;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefone;
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
+        private System.Windows.Forms.Button btnImprimir;
     }
 }

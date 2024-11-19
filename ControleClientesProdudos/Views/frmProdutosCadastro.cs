@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ControleClientesProdudos.Controls;
 using ControleClientesProdudos.Models;
+using ControleClientesProdudos.Relatorios;
 using Npgsql;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
@@ -20,7 +21,8 @@ namespace ControleClientesProdudos.Views
 {
     public partial class frmProdutosCadastro : Form
     {
-        Produtos c = new Produtos();
+        Produtos p = new Produtos();
+        DataTable dt = new DataTable();
         public frmProdutosCadastro()
         {
             InitializeComponent();
@@ -28,10 +30,10 @@ namespace ControleClientesProdudos.Views
         }
         private void CarregaCampos()
         {
-            txtNome.Text = c.Nome;
-            txtDescricao.Text = c.Descricao;
-            mskPreco.Text = c.Preco.ToString();
-            txtEstoque.Text = c.Estoque.ToString();
+            txtNome.Text = p.Nome;
+            txtDescricao.Text = p.Descricao;
+            mskPreco.Text = p.Preco.ToString();
+            txtEstoque.Text = p.Estoque.ToString();
         }
         private void LimpaCampos()
         {
@@ -95,12 +97,12 @@ namespace ControleClientesProdudos.Views
                 return;
             }
 
-            c.Nome = txtNome.Text;
-            c.Descricao = txtDescricao.Text;
-            c.Preco = double.Parse(mskPreco.Text.Replace(",", "."), CultureInfo.InvariantCulture);
-            c.Estoque = Convert.ToInt32(txtEstoque.Text);
-            c.Insere();
-            c.SelecionaTipoTexto();
+            p.Nome = txtNome.Text;
+            p.Descricao = txtDescricao.Text;
+            p.Preco = double.Parse(mskPreco.Text.Replace(",", "."), CultureInfo.InvariantCulture);
+            p.Estoque = Convert.ToInt32(txtEstoque.Text);
+            p.Insere();
+            p.SelecionaTipoTexto();
             btnIncluir.Enabled = false;
             rdbNome.Checked = true;
             txtPesquisa.Text = txtNome.Text;
@@ -125,15 +127,15 @@ namespace ControleClientesProdudos.Views
                 return;
             }
 
-            c.Nome = txtNome.Text;
-            c.Descricao = txtDescricao.Text;
+            p.Nome = txtNome.Text;
+            p.Descricao = txtDescricao.Text;
 
-            c.Preco =  double.Parse(mskPreco.Text.Replace(",","."), CultureInfo.InvariantCulture);
+            p.Preco =  double.Parse(mskPreco.Text.Replace(",","."), CultureInfo.InvariantCulture);
 
-            c.Estoque = Convert.ToInt32(txtEstoque.Text);
+            p.Estoque = Convert.ToInt32(txtEstoque.Text);
 
-            c.Altera();
-            c.SelecionaTipoInt("idProduto", c.IdProduto);
+            p.Altera();
+            p.SelecionaTipoInt("idProduto", p.IdProduto);
             CarregaCampos();
             rdbNome.Checked = true;
             txtPesquisa.Text = txtNome.Text;
@@ -142,8 +144,8 @@ namespace ControleClientesProdudos.Views
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            c.Deletar();
-            c.SelecionaTipoInt("idProduto", c.IdProduto);
+            p.Deletar();
+            p.SelecionaTipoInt("idProduto", p.IdProduto);
             Localiza();
         }
 
@@ -168,8 +170,8 @@ namespace ControleClientesProdudos.Views
                 if (dgvProdutos.CurrentCell != null && dgvProdutos.CurrentCell.Value != null)
                 {
                     {
-                        c.IdProduto = (int)dgvProdutos.CurrentCell.Value;
-                        c.SelecionaTipoInt("idProduto", c.IdProduto);
+                        p.IdProduto = (int)dgvProdutos.CurrentCell.Value;
+                        p.SelecionaTipoInt("idProduto", p.IdProduto);
                         CarregaCampos();
                     }
                 }
@@ -193,6 +195,27 @@ namespace ControleClientesProdudos.Views
         private void mskPreco1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            dt.Columns.Add("Nome");
+            dt.Columns.Add("Descricao");
+            dt.Columns.Add("Preco");
+            dt.Columns.Add("Estoque");
+
+
+            foreach (DataGridViewRow item in dgvProdutos.Rows)
+            {
+                dt.Rows.Add(item.Cells["nome"].Value.ToString(),
+                    item.Cells["descricao"].Value.ToString(),
+                    item.Cells["preco"].Value.ToString(),
+                    item.Cells["email"].Value.ToString());
+
+            }
+
+            frmRelClientes frmPesqCli = new frmRelClientes(dt);
+            frmPesqCli.ShowDialog(this);
         }
     }
 }

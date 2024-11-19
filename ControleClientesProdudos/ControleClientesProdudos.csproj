@@ -130,6 +130,18 @@
     <Compile Include="mdiPrincipal.Designer.cs">
       <DependentUpon>mdiPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Relatorios\frmRelClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\frmRelClientes.Designer.cs">
+      <DependentUpon>frmRelClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\frmRelProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\frmRelProdutos.Designer.cs">
+      <DependentUpon>frmRelProdutos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Relatorios\frmRelVendasRealizadas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,9 +186,17 @@
     <EmbeddedResource Include="mdiPrincipal.resx">
       <DependentUpon>mdiPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\frmRelClientes.resx">
+      <DependentUpon>frmRelClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\frmRelProdutos.resx">
+      <DependentUpon>frmRelProdutos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\frmRelVendasRealizadas.resx">
       <DependentUpon>frmRelVendasRealizadas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\RelClientes.rdlc" />
+    <EmbeddedResource Include="Relatorios\RelProdutos.rdlc" />
     <EmbeddedResource Include="Relatorios\RelVendasRealizadas.rdlc" />
     <EmbeddedResource Include="Views\frmClientesCadastro.resx">
       <DependentUpon>frmClientesCadastro.cs</DependentUpon>
@@ -191,6 +211,7 @@
       <DependentUpon>frmVendasRealizadas.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\ControleClientesProdudos.Models.Clientes.datasource" />
     <None Include="Properties\DataSources\ControleClientesProdudos.Models.Vendas.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

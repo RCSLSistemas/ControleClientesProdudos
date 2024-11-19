@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnVendasRealizadas = new System.Windows.Forms.Button();
             this.btnFinalizarVenda = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
             this.btnPesquisaCliente = new System.Windows.Forms.Button();
@@ -70,7 +71,6 @@
             this.lblQuantidade = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.txtCliente = new System.Windows.Forms.TextBox();
-            this.btnVendasRealizadas = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -91,6 +91,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(525, 48);
             this.panel1.TabIndex = 8;
+            // 
+            // btnVendasRealizadas
+            // 
+            this.btnVendasRealizadas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVendasRealizadas.Location = new System.Drawing.Point(118, 9);
+            this.btnVendasRealizadas.Name = "btnVendasRealizadas";
+            this.btnVendasRealizadas.Size = new System.Drawing.Size(137, 32);
+            this.btnVendasRealizadas.TabIndex = 5;
+            this.btnVendasRealizadas.Text = "Vendas &Realizadas";
+            this.btnVendasRealizadas.UseVisualStyleBackColor = true;
+            this.btnVendasRealizadas.Click += new System.EventHandler(this.btnVendasRealizadas_Click);
             // 
             // btnFinalizarVenda
             // 
@@ -120,7 +131,7 @@
             this.btnPesquisaCliente.Location = new System.Drawing.Point(432, 16);
             this.btnPesquisaCliente.Name = "btnPesquisaCliente";
             this.btnPesquisaCliente.Size = new System.Drawing.Size(73, 23);
-            this.btnPesquisaCliente.TabIndex = 6;
+            this.btnPesquisaCliente.TabIndex = 0;
             this.btnPesquisaCliente.Text = "&Pesquisar";
             this.btnPesquisaCliente.UseVisualStyleBackColor = true;
             this.btnPesquisaCliente.Click += new System.EventHandler(this.btnPesquisa_Click);
@@ -258,9 +269,9 @@
             // preco
             // 
             this.preco.DataPropertyName = "preco";
-            dataGridViewCellStyle4.Format = "N2";
-            dataGridViewCellStyle4.NullValue = "0";
-            this.preco.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = "0";
+            this.preco.DefaultCellStyle = dataGridViewCellStyle1;
             this.preco.HeaderText = "Preço";
             this.preco.Name = "preco";
             this.preco.ReadOnly = true;
@@ -379,9 +390,9 @@
             // valor
             // 
             this.valor.DataPropertyName = "valor";
-            dataGridViewCellStyle5.Format = "N2";
-            dataGridViewCellStyle5.NullValue = "0";
-            this.valor.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Format = "N2";
+            dataGridViewCellStyle2.NullValue = "0";
+            this.valor.DefaultCellStyle = dataGridViewCellStyle2;
             this.valor.HeaderText = "Valor";
             this.valor.Name = "valor";
             this.valor.ReadOnly = true;
@@ -390,9 +401,9 @@
             // data
             // 
             this.data.DataPropertyName = "data";
-            dataGridViewCellStyle6.Format = "d";
-            dataGridViewCellStyle6.NullValue = null;
-            this.data.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Format = "d";
+            dataGridViewCellStyle3.NullValue = null;
+            this.data.DefaultCellStyle = dataGridViewCellStyle3;
             this.data.HeaderText = "Data";
             this.data.Name = "data";
             this.data.ReadOnly = true;
@@ -484,17 +495,6 @@
             this.txtCliente.TabIndex = 9;
             this.txtCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtCliente.TextChanged += new System.EventHandler(this.txtCliente_TextChanged);
-            // 
-            // btnVendasRealizadas
-            // 
-            this.btnVendasRealizadas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVendasRealizadas.Location = new System.Drawing.Point(118, 9);
-            this.btnVendasRealizadas.Name = "btnVendasRealizadas";
-            this.btnVendasRealizadas.Size = new System.Drawing.Size(137, 32);
-            this.btnVendasRealizadas.TabIndex = 5;
-            this.btnVendasRealizadas.Text = "Vendas &Realizadas";
-            this.btnVendasRealizadas.UseVisualStyleBackColor = true;
-            this.btnVendasRealizadas.Click += new System.EventHandler(this.btnVendasRealizadas_Click);
             // 
             // frmVendasCadastro
             // 
