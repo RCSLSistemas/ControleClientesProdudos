@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtEstoque = new System.Windows.Forms.TextBox();
             this.lblEstoque = new System.Windows.Forms.Label();
@@ -106,7 +106,6 @@
             this.mskPreco.Name = "mskPreco";
             this.mskPreco.Size = new System.Drawing.Size(91, 20);
             this.mskPreco.TabIndex = 5;
-            this.mskPreco.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mskPreco1_MaskInputRejected);
             // 
             // lblPreco
             // 
@@ -320,7 +319,6 @@
             this.dgvProdutos.ReadOnly = true;
             this.dgvProdutos.Size = new System.Drawing.Size(503, 180);
             this.dgvProdutos.TabIndex = 2;
-            this.dgvProdutos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProdutos_CellClick);
             this.dgvProdutos.Click += new System.EventHandler(this.dgvProdutos_Click);
             // 
             // idProduto
@@ -350,9 +348,9 @@
             // preco
             // 
             this.preco.DataPropertyName = "preco";
-            dataGridViewCellStyle1.Format = "N2";
-            dataGridViewCellStyle1.NullValue = "0";
-            this.preco.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Format = "N2";
+            dataGridViewCellStyle3.NullValue = "0";
+            this.preco.DefaultCellStyle = dataGridViewCellStyle3;
             this.preco.HeaderText = "Preço";
             this.preco.Name = "preco";
             this.preco.ReadOnly = true;
@@ -376,6 +374,7 @@
             this.Name = "frmProdutosCadastro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Produtos";
+            this.Load += new System.EventHandler(this.frmProdutosCadastro_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.panel1.ResumeLayout(false);

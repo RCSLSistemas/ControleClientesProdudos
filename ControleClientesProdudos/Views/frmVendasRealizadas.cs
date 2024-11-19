@@ -148,11 +148,12 @@ namespace ControleClientesProdudos.Views
 
             foreach (DataGridViewRow item in dgvVendas.Rows)
             {
-                dt.Rows.Add(item.Cells["data"].Value.ToString(),
+                dt.Rows.Add(
+                    item.Cells["data"].Value ,
                     item.Cells["cliente"].Value.ToString(),
                     item.Cells["produto"].Value.ToString(),
                     item.Cells["qtd"].Value.ToString(),
-                    item.Cells["total"].Value.ToString());
+                    string.Format("{0:N}", item.Cells["total"].Value));
             }
 
             frmRelVendasRealizadas frmPesqCli = new frmRelVendasRealizadas(dt);

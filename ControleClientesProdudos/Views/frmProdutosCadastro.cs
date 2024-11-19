@@ -181,22 +181,7 @@ namespace ControleClientesProdudos.Views
 
             }
         }
-
-        private void dgvProdutos_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void mskPreco1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
+ 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
             dt.Columns.Add("Nome");
@@ -209,13 +194,18 @@ namespace ControleClientesProdudos.Views
             {
                 dt.Rows.Add(item.Cells["nome"].Value.ToString(),
                     item.Cells["descricao"].Value.ToString(),
-                    item.Cells["preco"].Value.ToString(),
-                    item.Cells["email"].Value.ToString());
+                    string.Format("{0:N}", item.Cells["preco"].Value.ToString()),
+                    item.Cells["estoque"].Value.ToString());
 
             }
 
-            frmRelClientes frmPesqCli = new frmRelClientes(dt);
-            frmPesqCli.ShowDialog(this);
+            frmRelProdutos relProduto = new frmRelProdutos(dt);
+            relProduto.ShowDialog(this);
+        }
+
+        private void frmProdutosCadastro_Load(object sender, EventArgs e)
+        {
+            Localiza();
         }
     }
 }

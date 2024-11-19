@@ -25,29 +25,22 @@ namespace ControleClientesProdudos.View
             this.Close();
         }
 
- 
-        private void mnClientesCad_Click(object sender, EventArgs e)
-        {
-            frmClientesCadastro frmPesqCli = new frmClientesCadastro();
-            frmPesqCli.ShowDialog(this);
-        }
-
-        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmProdutosCadastro frmPesqCli = new frmProdutosCadastro();
-            frmPesqCli.ShowDialog(this);
-        }
 
         private void mnVendas_Click(object sender, EventArgs e)
         {
-            frmVendasCadastro frmPesqCli = new frmVendasCadastro();
-            frmPesqCli.ShowDialog(this);
+            frmVendasCadastro frmVendas = new frmVendasCadastro();
+            frmVendas.ShowDialog(this);
         }
 
-        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void mnProdutos_Click(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            frmRelVendasRealizadas frmPesqCli = new frmRelVendasRealizadas(dt);
+            frmProdutosCadastro frmPesqProd = new frmProdutosCadastro();
+            frmPesqProd.ShowDialog(this);
+        }
+
+        private void mnClientes_Click(object sender, EventArgs e)
+        {
+            frmClientesCadastro frmPesqCli = new frmClientesCadastro();
             frmPesqCli.ShowDialog(this);
         }
     }

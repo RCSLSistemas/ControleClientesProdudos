@@ -76,7 +76,7 @@
             this.mnClientes.Name = "mnClientes";
             this.mnClientes.Size = new System.Drawing.Size(180, 22);
             this.mnClientes.Text = "&Clientes";
-            this.mnClientes.Click += new System.EventHandler(this.mnClientesCad_Click);
+            this.mnClientes.Click += new System.EventHandler(this.mnClientes_Click);
             // 
             // toolStripSeparator3
             // 
@@ -89,7 +89,7 @@
             this.mnProdutos.Name = "mnProdutos";
             this.mnProdutos.Size = new System.Drawing.Size(180, 22);
             this.mnProdutos.Text = "&Produtos";
-            this.mnProdutos.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            this.mnProdutos.Click += new System.EventHandler(this.mnProdutos_Click);
             // 
             // toolStripSeparator4
             // 

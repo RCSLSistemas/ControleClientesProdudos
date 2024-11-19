@@ -40,7 +40,7 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.50882cm</Width>
+              <Width>4.86361cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>6.20417cm</Width>
@@ -49,10 +49,10 @@
               <Width>6.02778cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.28833cm</Width>
+              <Width>1.75916cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>7.6811cm</Width>
+              <Width>5.85547cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -228,7 +228,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Data.Value</Value>
-                              <Style />
+                              <Style>
+                                <Format>dd/MM/yyyy</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -411,7 +413,7 @@
     <Height>2.98958in</Height>
     <Style />
   </Body>
-  <Width>9.91989in</Width>
+  <Width>10.57614in</Width>
   <Page>
     <PageHeader>
       <Height>2.40771cm</Height>
