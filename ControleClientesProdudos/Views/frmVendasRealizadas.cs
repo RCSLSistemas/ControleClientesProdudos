@@ -140,11 +140,11 @@ namespace ControleClientesProdudos.Views
         private void btnRelatorio_Click(object sender, EventArgs e)
         {
 
-            dt.Columns.Add("data");
-            dt.Columns.Add("cliente");
-            dt.Columns.Add("produto");
-            dt.Columns.Add("qtd");
-            dt.Columns.Add("total");
+            dt.Columns.Add("Data");
+            dt.Columns.Add("NomeCliente");
+            dt.Columns.Add("NomeProduto");
+            dt.Columns.Add("QtdItens");
+            dt.Columns.Add("ValorTotal");
 
             foreach (DataGridViewRow item in dgvVendas.Rows)
             {
